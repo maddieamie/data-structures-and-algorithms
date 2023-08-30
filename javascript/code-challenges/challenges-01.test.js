@@ -6,17 +6,20 @@ CHALLENGE 1
 Write a function named `addOne` that takes an array of numbers, and returns a new array of the numbers, incremented by 1.
 
 Use `forEach` to loop over the input array and work with each value.  Push the new value into a local array. Return the local array;
+expect(addOne([1, 2, 3, 4, 5])).toStrictEqual([2, 3, 4, 5, 6]);
 ------------------------------------------------------------------------------------------------ */
 
 let a1 = [1, 2, 3, 4, 5];
 let a2 = [];
 
 const addOne = (arr) => {
-  let sum= arr+1;
-  a2.push(sum);
+  arr.forEach(ele => { let sum = ele + 1;
+    a2.push(sum);});
+
+  return a2;
 };
 
-a1.forEach(addOne);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -24,16 +27,18 @@ CHALLENGE 2
 Write a function named `addExclamation` that takes an array of strings, and returns a new array of the same strings with an "!" added to the end.
 
 Use `forEach` to loop over the input array. Modify each string, and add the updated value into a local array. Return the local array;
+expect(addExclamation(['hi', 'how', 'are', 'you'])).toStrictEqual(['hi!', 'how!', 'are!', 'you!']);
 ------------------------------------------------------------------------------------------------ */
 
 let b1 = ['what', 'up', 'my' , 'dudes?'];
 let b2 = [];
 const addExclamation = (arr) => {
-  let yay = arr + '!';
-  b2.push(yay);
+  arr.forEach(ele => {let yay = ele + '!';
+  b2.push(yay);});
+  return b2;
 };
 
-b1.forEach(addExclamation);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -47,11 +52,12 @@ let c1 = ['woo', 'uppercase', 'so amaze'];
 let c2 = [];
 
 const allUpperCase = (arr) => {
- let go = arr.toUpperCase();
- c2.push(go);
+ arr.forEach(ele => {let go = ele.toUpperCase();
+ c2.push(go);});
+ return c2;
 };
 
-c1.forEach(allUpperCase);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -61,21 +67,25 @@ Write a function named `greeting` that takes in a single string and returns the 
 Then, write a function named `speaker` that takes in an array of strings and a callback function.
 
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
+expect(speaker(['hello', '301', 'students'], greeting)).toStrictEqual(['HELLO!', '301!', 'STUDENTS!']);
 ------------------------------------------------------------------------------------------------ */
 let d1 = ['wow', 'we', 'did', 'it'];
 let d2 = [];
 
-const greeting = (arr) => {
-  let gg = arr.toUpperCase() + '!';
-  d2.push(gg);
+const greeting = (value) => {
+  let plz = value.toUpperCase + '!';
+  return plz;
 };
 
 const speaker = (arr, callback) => {
-  arr.forEach(callback);
+  for(let i = 0; i < arr.length; i++)
+    { callback(arr);}
+    d2.push(arr);
+    return d2;
+
 };
 
-speaker(d1, greeting);
-console.log(d2);
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -101,9 +111,10 @@ const addValues = (arr, value) => {
 const addNumbers = (num, arr, times, callback) => {
   for(let i = 0; i < times; i++)
    { callback(arr, num); }
+   return arr;
 };
 
-addNumbers(4, e1, 6, addValues);
+addNumbers(8, e1, 5, addValues);
 console.log(e1);
 
 /* ------------------------------------------------------------------------------------------------
@@ -126,7 +137,7 @@ This function should use forEach to populate your grocery list based on the stor
 
 
 let list =[];
-let inventory = [
+let inventory2 = [
   { name: 'apples', available: true },
   { name: 'pears', available: true },
   { name: 'oranges', available: false },
@@ -142,10 +153,11 @@ const createList = (availableItems) => {
       list.push(item.name);
     }
   });
+  return list;
 
 };
 
-createList(inventory);
+
 
 console.log(list);
 /* ------------------------------------------------------------------------------------------------
@@ -180,9 +192,10 @@ const fizzbuzz = (arr) => {
     }
   });
   console.log(ugh);
+  return arr;
 };
 
-fizzbuzz(numarray1);
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
