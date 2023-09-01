@@ -73,14 +73,15 @@ let d1 = ['wow', 'we', 'did', 'it'];
 let d2 = [];
 
 const greeting = (value) => {
-  let plz = value.toUpperCase + '!';
-  return plz;
+  let ggg = value.toUpperCase();
+
+  d2.push(ggg + '!');
 };
 
 const speaker = (arr, callback) => {
   for(let i = 0; i < arr.length; i++)
-    { callback(arr);}
-    d2.push(arr);
+    { callback(arr[i]);}
+
     return d2;
 
 };
@@ -114,8 +115,7 @@ const addNumbers = (num, arr, times, callback) => {
    return arr;
 };
 
-addNumbers(8, e1, 5, addValues);
-console.log(e1);
+
 
 /* ------------------------------------------------------------------------------------------------
 
@@ -136,7 +136,7 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 
-let list =[];
+
 let inventory2 = [
   { name: 'apples', available: true },
   { name: 'pears', available: true },
@@ -147,19 +147,20 @@ let inventory2 = [
 ];
 
 const createList = (availableItems) => {
-
+  let list =[];
   availableItems.forEach((item)=> {
-    if (item.available) {
+    if (item.available===true) {
       list.push(item.name);
     }
+
   });
-  return list;
+return list;
 
 };
 
 
 
-console.log(list);
+
 /* ------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
 
@@ -174,7 +175,7 @@ Iterate over the array using forEach to determine the output based on several ru
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 let ugh = [];
-let numarray1 = [3, 6, 9, 5, 10, 15, 4, 2, 45];
+
 
 const fizzbuzz = (arr) => {
   arr.forEach(num => {
@@ -192,7 +193,7 @@ const fizzbuzz = (arr) => {
     }
   });
   console.log(ugh);
-  return arr;
+  return ugh;
 };
 
 
