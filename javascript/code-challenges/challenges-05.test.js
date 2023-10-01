@@ -47,7 +47,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 const addPurchases = (arr) => {
   // Solution code here...
 const sum = arr.reduce(
-  (accumulator, currentValue) => (accumulator + currentValue.item,
+  (accumulator, currentValue) => (accumulator + currentValue.purchasePrice,
   0));
   return sum; 
 };
@@ -62,7 +62,8 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-const sum = arr.reduce((accumulator, currentvalue)=>(accumulator.index + currentvalue)
+const sum = arr.reduce((accumulator, currentIndex)=>(currentIndex >= 0 ? accumulator +=1 : return accumulator, 0));
+return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -122,7 +123,8 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+const names = arr.reduce(({ currentIndex, value }) => ({ currentIndex.name.value }, 0));
+return names;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -135,6 +137,16 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+/*var newString = "";
+    for (var i = str.length - 1; i >= 0; i--) {
+        newString += str[i];
+    }
+    return newString;*/
+    let split = str.split("");
+    let reverse = split.reverse();
+    let stringy = reverse.reduce((currentvalue, accumulator)=> ( currentvalue + accumulator, 0));
+    return stringy;
+    
 };
 
 /* ------------------------------------------------------------------------------------------------
