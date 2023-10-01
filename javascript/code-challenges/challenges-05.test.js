@@ -11,10 +11,10 @@ should convert to ["Jane Doe", "James Bond"]
 Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
+
 const toLastNames = people => {
-  // Solution code here...
-const reformattedArray = people.map(({ key, value }) => ({ [key]  value }));
-return reformattedArray;
+  const reformattedArray = people.map(({ firstName, lastName }) => `${firstName} ${lastName}`);
+  return reformattedArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -27,10 +27,12 @@ Write a function named addValues that, given an array of numbers as input, uses 
 const addValues = (arr) => {
   // Solution code here...
 const sum = arr.reduce(
-  (accumulator, currentValue) => (accumulator + currentValue,
-  0));
-  return sum; 
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+  );
+  return sum;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -47,9 +49,11 @@ Write a function named addPurchases that, given an array of objects as input, us
 const addPurchases = (arr) => {
   // Solution code here...
 const sum = arr.reduce(
-  (accumulator, currentValue) => (accumulator + currentValue.purchasePrice,
-  0));
-  return sum; 
+  (accumulator, currentValue) => accumulator + currentValue.purchasePrice,
+  0
+  );
+  return sum;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,7 +66,7 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-const sum = arr.reduce((accumulator, currentIndex)=>(currentIndex >= 0 ? accumulator +=1 : return accumulator, 0));
+const sum = arr.reduce((accumulator)=>accumulator + 1, 0);
 return sum;
 };
 
@@ -123,8 +127,13 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-const names = arr.reduce(({ currentIndex, value }) => ({ currentIndex.name.value }, 0));
-return names;
+  const names = arr.reduce((accumulator, currentValue) => {
+    // Append the current name to the accumulator array
+    accumulator.push(currentValue.name);
+    return accumulator;
+  }, []);
+
+  return names;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -144,9 +153,9 @@ const reversedString = (str) => {
     return newString;*/
     let split = str.split("");
     let reverse = split.reverse();
-    let stringy = reverse.reduce((currentvalue, accumulator)=> ( currentvalue + accumulator, 0));
+    let stringy = reverse.reduce((currentValue, accumulator)=> currentValue + accumulator, '');
     return stringy;
-    
+
 };
 
 /* ------------------------------------------------------------------------------------------------
