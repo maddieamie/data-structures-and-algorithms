@@ -145,10 +145,21 @@ const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
   let ingredient = recipe.ingredients;
+  console.log(ingredient[0]);
+  ingredient.map((ele) => {
+    let newarr= ele.slice(0);
+    console.log(newarr);
+    let split= newarr.split(' ');
+    console.log(split);
+    let item= split.slice(2);
+    let joined= item.join(' ');
+    console.log(joined);
+    result.push(joined);
+    })
+    console.log(result);
 
-  ingredient.slice
+    return result;
 
-  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
