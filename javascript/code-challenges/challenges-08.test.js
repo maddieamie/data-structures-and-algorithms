@@ -6,6 +6,7 @@ CHALLENGE 1 - Review
 
 Write a function named sortByChildren that sorts the characters below by the number of children in each house (fewest to most). If a house has the same number of children, sort alphabetically by house name.
 
+
 ------------------------------------------------------------------------------------------------ */
 let characters = [
   {
@@ -53,7 +54,30 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  // Solution code here...blahjsjlsakdjfldskjflaksdj
+
+  charArray.sort((a, b) => {
+    const nameA = a.house.toUpperCase(); // ignore upper and lowercase
+    const nameB = b.house.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+
+    // names must be equal
+    return 0;
+  });
+
+  //console.log(charArray);
+
+  charArray.sort((a, b) => {
+    return a.children.length - b.children.length; });
+
+  //console.log(charArray);
+
+  return charArray;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,6 +89,10 @@ Write a function named containsW that takes in a string. This function should us
 
 const containsW = (str) => {
   // Solution code here...
+  let regex = /w/gm;
+  let test = regex.test(str);
+  return test;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,6 +109,9 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  let regex = /\d/gm;
+  let test = regex.test(input);
+  return test;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,6 +123,9 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
+  let regex = /(world)/gm;
+  let test = regex.test(input);
+  return test;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -104,6 +138,13 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  let regex = /([A-Z]\w*)/g;
+  let match = str.match(regex);
+  if (match === null) {
+    match = [];
+  }
+  return match;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,6 +155,11 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let regex = /^[A-J]\w*/g;
+  let match = arr.filter(str => str.match(regex));
+
+
+  return match;
 };
 
 /* ------------------------------------------------------------------------------------------------
