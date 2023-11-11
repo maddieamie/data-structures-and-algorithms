@@ -9,6 +9,10 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 function returnTen(str){
   // Solution code here...aslkdjf;lsdkjfl;kdj
+  let yay= str.split('');
+  let gay = yay.slice(-10);
+  return gay;
+
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -27,7 +31,19 @@ return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
   // Solution code here...
-};
+  let thing = 0;
+
+for (let i = 0; i < matrix.length; i++) {
+  for (let j = 0; j < matrix[i].length; j++) {
+
+    if (matrix[i][j] >= thing) {
+    thing = matrix[i][j];
+    //console.log(thing);}
+  }
+}
+
+return thing;
+}; }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -45,6 +61,15 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
+  let thing = 0;
+
+for (let i = 0; i < matrix.length; i++) {
+  for (let j = 0; j < matrix[i].length; j++) {
+    thing = thing + matrix[i][j];
+  }
+}
+
+return thing;
 };
 
 
@@ -73,6 +98,43 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 const grandTotal = (stores) => {
   // Solution code here...
 
+    //I know that there is more efficient way to do this but I literally just can't lol
+
+ let bigTotal = [];
+
+ const first = stores.map(row => row[0]);
+ const second = stores.map(row => row[1]);
+ const third = stores.map(row => row[2]);
+ const fourth = stores.map(row => row[3]);
+ const fifth = stores.map(row => row[4]);
+ const sixth = stores.map(row => row[5]);
+ const seventh = stores.map(row => row[6]);
+ const eight = stores.map(row => row[7]);
+ const nine = stores.map(row => row[8]);
+ const ten = stores.map(row => row[9]);
+ const eleven = stores.map(row => row[10]);
+ const tweleve = stores.map(row => row[11]);
+
+
+let counter = (arr) => {
+const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0 );
+bigTotal.push(sum); }
+
+counter(first);
+counter(second);
+counter(third);
+counter(fourth);
+counter(fifth);
+counter(sixth);
+counter(seventh);
+counter(eight);
+counter(nine);
+counter(ten);
+counter(eleven);
+counter(tweleve);
+
+return bigTotal;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -87,6 +149,11 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  function Hourly(sales, time) {
+    this.sales = `${sales} cookies`;
+    this.sales = ${time};
+  }
+
 };
 
 /* ------------------------------------------------------------------------------------------------
