@@ -149,10 +149,15 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
-  function Hourly(sales, time) {
-    this.sales = `${sales} cookies`;
-    this.sales = ${time};
-  }
+  const combinedArray = [];
+
+  hours.forEach((hour, index) => {
+    // Use push to add objects to the combinedArray
+    combinedArray.push({ sales: `${data[index]} cookies`, time: hour });
+  });
+
+  console.log(combinedArray);
+  return combinedArray;
 
 };
 
@@ -179,6 +184,18 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  const targetName = 'Treats';
+  const targetStore= 'Pet store';
+
+ const foundObject = arr.filter(obj => obj.store === targetStore)
+ console.log(foundObject);
+
+ let gay= foundObject[0].items;
+
+ const treats = gay.filter(obj => obj.name === targetName);
+
+
+ return treats[0].quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
