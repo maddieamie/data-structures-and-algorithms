@@ -3,171 +3,144 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named transformToLis that, given an object, returns an array of the key value pairs as html list items.
-
-For example:
-{
-  name: 'bob',
-  age: 32
-}
-
-Becomes:
-[
-<li>name: bob</li>,
-<li>age: 32</li>
-]
+Write a function named longestString that takes in an array of strings and returns the index position of the longest string. 
 ------------------------------------------------------------------------------------------------ */
 
-function transformToLis(obj){
-  // Solution code here...
-  const newarr = [];
-
-  for (const property in obj) {
-    newarr.push('<li>' + `${property}: ${obj[property]}</li>`);
-  }
-
-  return newarr;
-}
-
+const longestString = (arr) => {
+// Solution code here...
+};
+  
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named count that, given an integer and an array of arrays, uses either filter, map, or reduce to count the amount of times the integer is present in the array of arrays.
+Write a function named firstLetters that takes in an array of strings and returns an array containing only the first letter of each string.
 
-Note: You might need to use the same method more than once.
-
-For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
+For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 'w', 'w', ':']
 ------------------------------------------------------------------------------------------------ */
 
-const count = (target, input) => {
-  let joined = input.flat();
-  console.log(joined);
-	let nah = joined.reduce((accumulator, currentValue) => currentValue === target ? accumulator + 1 : accumulator, 0);
-  return nah;
+const firstLetters = (arr) => {
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function that, given an array of integer arrays as input, calculates the total sum of all the elements in the array.
+Write a function named findHappiness that takes in an array of strings and returns an array containing only the strings from the input array that contain ":)".
 
-You may want to use filter, map, or reduce for this problem, but are not required to. You may need to use the same method more than once.
-
-For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
+For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this is great :)', ':)))))']
 ------------------------------------------------------------------------------------------------ */
 
-const totalSum = (input) => {
+const findHappiness = (arr) => {
   // Solution code here...
-  let joined = input.flat();
-  console.log(joined);
-	let nah = joined.reduce((accumulator, currentValue) => currentValue + accumulator, 0);
-  return nah;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named divisibleByFiveTwoToThePower that accepts an array of arrays as input.
+Write a function named standardizePhoneNumbers that takes in an array of phone number strings in (XXX) XXX-XXXX format and returns an array with the phone number strings in XXXXXXXXXX format.
 
-This function should first remove any elements that are not numbers or are not divisible by five.
-
-This function should then raise 2 to the power of the resulting numbers, returning an array of arrays.
-
-For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
+For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
-const divisibleByFiveTwoToThePower = (input) => {
+const standardizePhoneNumbers = (arr) => {
   // Solution code here...
- for (let i = 0; i < input.length; i++) {
-    input[i] = input[i].filter(ele => typeof ele == 'number').filter(ele => ele % 5 === 0).map(ele => 2 ** ele);
-  }
-  return input;
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5
+CHALLENGE 5 
 
-Write a function named findMaleAndFemale that, given the Star Wars data, below,
-returns the names of the characters whose gender is either male or female.
+Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
 
-The names should be combined into a single string with each character name separated by "and".
-
-For example, "C-3PO and Luke Skywalker".
+For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
-let starWarsData = [{
-  name: 'Luke Skywalker',
-  height: '172',
-  mass: '77',
-  hair_color: 'blond',
-  skin_color: 'fair',
-  eye_color: 'blue',
-  birth_year: '19BBY',
-  gender: 'male',
-},
-{
-  name: 'C-3PO',
-  height: '167',
-  mass: '75',
-  hair_color: 'n/a',
-  skin_color: 'gold',
-  eye_color: 'yellow',
-  birth_year: '112BBY',
-  gender: 'n/a'
-},
-{
-  name: 'R2-D2',
-  height: '96',
-  mass: '32',
-  hair_color: 'n/a',
-  skin_color: 'white, blue',
-  eye_color: 'red',
-  birth_year: '33BBY',
-  gender: 'n/a'
-},
-{
-  name: 'Darth Vader',
-  height: '202',
-  mass: '136',
-  hair_color: 'none',
-  skin_color: 'white',
-  eye_color: 'yellow',
-  birth_year: '41.9BBY',
-  gender: 'male'
-},
-{
-  name: 'Leia Organa',
-  height: '150',
-  mass: '49',
-  hair_color: 'brown',
-  skin_color: 'light',
-  eye_color: 'brown',
-  birth_year: '19BBY',
-  gender: 'female'
-}];
-
-let findMaleAndFemale = (data) => {
+const onlyOddChars = (str) => {
   // Solution code here...
-   const filteredArray = data.filter(obj => ['male', 'female'].includes(obj.gender));
-
-  const namedarray = filteredArray.map(obj => obj.name).join(' and ');
-
-  return namedarray;
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6
+CHALLENGE 6 
 
-Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the character who is the shortest in height.
+Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
 
-let findShortest = (data) => {
+const allHappy = (arr) => {
   // Solution code here...
-  let sorted= data.sort((a, b) => a.height - b.height);
+};
 
-  let shortest = sorted[0].name;
+/* ------------------------------------------------------------------------------------------------
+CHALLENGE 7 - Stretch Goal
 
- return shortest;
+Write a function named findAnything that takes in an array of strings, along with a target string. Return an array containing only those strings from the original array that contain the target string.
+------------------------------------------------------------------------------------------------ */
+
+const findAnything = (arr, target) => {
+  // Solution code here...
+};
+
+/* ------------------------------------------------------------------------------------------------
+CHALLENGE 8 - Stretch Goal
+
+Write a function named findEvery that takes in an array of strings, along with a target string. Return a Boolean based on whether or not every string in the array contains the target string.
+------------------------------------------------------------------------------------------------ */
+
+const findEvery = (arr, target) => {
+  // Solution code here...
+};
+
+/* ------------------------------------------------------------------------------------------------
+CHALLENGE 9 - Stretch Goal
+
+We've been testing a new course enrollment system, and we think we have the bugs worked out, but in the meantime, Brook enrolled himself in a bunch of different classes to test if it was working.
+
+Write a function named unenrollBrook that takes in a two-dimensional array, where each array represents one course's roster and is an array of strings of the names of the people in that course.
+
+Return a two-dimensional array with the same roster, but where anyone whose name includes Brook is removed from every course.
+
+For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again', 'still Brook']] returns [['Actual Person'], ['Human Person']]
+------------------------------------------------------------------------------------------------ */
+
+const unenrollBrook = (arr) => {
+  // Solution code here...
+};
+
+/* ------------------------------------------------------------------------------------------------
+CHALLENGE 10 - Stretch Goal
+
+Write a function named sortByDay that takes in an array of strings, each of which represents an event's day and time.
+
+Return a two-dimensional array that organizes those strings based on the day on which they occur. For example, all events on Monday are in the first array, all events on Tuesday are in the second array, etc.
+
+If an event takes place on multiple days (i.e. "Dancing on Mondays and Tuesdays"), it should appear in both arrays.
+
+For example, ['Tuesday', 'Monday', 'Wednesday and Thursday', 'Tuesday 2', 'Thursday'] returns
+[
+  ['Monday'],
+  ['Tuesday', 'Tuesday 2'],
+  ['Wednesday and Thursday'],
+  ['Wednesday and Thursday', 'Thursday'],
+  [],
+  [],
+  []
+]
+------------------------------------------------------------------------------------------------ */
+
+const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+const sortByDay = (arr) => {
+  // Solution code here...
+};
+
+/* ------------------------------------------------------------------------------------------------
+CHALLENGE 11 - Stretch Goal
+
+Write a function named characterByIndex that takes in an array of strings and returns an array containing the first character of the first string, the second character of the second string, etc.
+
+For example, ['abcd', 'efgh', 'ijkl', 'mnop'] returns ['a', 'f', 'k', 'p']
+------------------------------------------------------------------------------------------------ */
+
+const characterByIndex = (arr) => {
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -177,61 +150,139 @@ All the code below will verify that your functions are working to solve the chal
 
 DO NOT CHANGE any of the below code.
 
-Run your tests from the console: jest challenges-10.test.js
+Run your tests from the console: jest challenges-13.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
-  test('It should return a list of key value pairs inside of li tags', () => {
-    expect(transformToLis({name: 'bob', age: 32})[0]).toStrictEqual(`<li>name: bob</li>`);
-    expect(transformToLis({name: 'bob', age: 32})[1]).toStrictEqual(`<li>age: 32</li>`);
-    expect(transformToLis({})).toStrictEqual([]);
+  test('It should return an index position of the longest string', () => {
+    const strArray1 = ['Ginger', 'Goose', 'Tangerine', 'Rosie', 'Mario', 'Malaki']
+    const strArray2 = [];
+    const strArray3= ['Ginger']
+
+    expect(longestString(strArray1)).toStrictEqual(2);
+    expect(longestString(strArray2)).toStrictEqual(-1);
+    expect(longestString(strArray3)).toStrictEqual(0);
   });
 });
 
 describe('Testing challenge 2', () => {
-  test('It should return the number of times the input is in the nested arrays', () => {
-    expect(count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]])).toStrictEqual(4);
-    expect(count(3, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]])).toStrictEqual(2);
-    expect(count(12, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]])).toStrictEqual(0);
-  });
-  test('It should work on empty arrays', () => {
-    expect(count(5, [[1, 3, 5, 7, 9], [], [5, 5, 5], [1, 2, 3], []])).toStrictEqual(4);
-    expect(count(5, [])).toStrictEqual(0);
+  test('It should return the first letter of each element of the array', () => {
+    const words = ['apple', 'banana', 'cantaloupe'];
+
+    expect(firstLetters(words)).toStrictEqual(['a', 'b', 'c']);
+    expect(firstLetters(['a', 'b', 'c', 'd'])).toStrictEqual(['a', 'b', 'c', 'd']);
+    expect(firstLetters([])).toStrictEqual([]);
   });
 });
 
 describe('Testing challenge 3', () => {
-  test('It should add all the numbers in the arrays', () => {
-    const nums = [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]];
+  test('It should return only the strings that contain smiley faces', () => {
+    const words = ['things', 'apple (:)', ':)banana', 'missing that thing', 'cant:)aloupe'];
 
-    expect(totalSum(nums)).toStrictEqual(66);
+    expect(findHappiness(words)).toStrictEqual(['apple (:)', ':)banana', 'cant:)aloupe']);
+    expect(findHappiness([])).toStrictEqual([]);
+    expect(findHappiness(['sadness'])).toStrictEqual([]);
+    expect(findHappiness([':) yay', ':( no', '', '', '', ''])).toStrictEqual([':) yay']);
   });
 });
 
 describe('Testing challenge 4', () => {
-  test('It should return numbers divisible by five, then raise two to the power of the resulting numbers', () => {
-    expect(divisibleByFiveTwoToThePower([[10, 20, 5, 4], [5, 6, 7, 9], [1, 10, 3]])).toStrictEqual([[1024, 1048576, 32], [32], [1024]]);
-  });
+  test('It should return a standardized set of phone numbers', () => {
+    const nums = ['(123) 456-7890', '(222) 222-2222'];
 
-  test('It should return an empty array if none of the numbers are divisible by five', () => {
-    expect(divisibleByFiveTwoToThePower([[1, 2, 3], [5, 10, 15]])).toStrictEqual([[], [32, 1024, 32768]]);
-  });
-
-  test('It should return an empty array if the values are not numbers', () => {
-    expect(divisibleByFiveTwoToThePower([['one', 'two', 'five'], ['5', '10', '15'], [5]])).toStrictEqual([[], [], [32]]);
+    expect(standardizePhoneNumbers(nums)).toStrictEqual(['1234567890', '2222222222']);
+    expect(standardizePhoneNumbers([nums[0]])).toStrictEqual(['1234567890']);
   });
 });
 
 describe('Testing challenge 5', () => {
-  test('It should return only characters that are male or female', () => {
-    expect(findMaleAndFemale(starWarsData)).toStrictEqual('Luke Skywalker and Darth Vader and Leia Organa');
-    expect(findMaleAndFemale([{ name: 'person', gender: 'female' }, { gender: 'lol' }, { name: 'persontwo', gender: 'male' }])).toStrictEqual('person and persontwo');
+  test('It should only return the odd indexed characters from the string', () => {
+    expect(onlyOddChars('0123456789')).toStrictEqual('13579');
+    expect(onlyOddChars('abcd')).toStrictEqual('bd');
+    expect(onlyOddChars('a')).toStrictEqual('');
+    expect(onlyOddChars('')).toStrictEqual('');
   });
 });
 
 describe('Testing challenge 6', () => {
-  test('It should return the name of the shortest character', () => {
-    expect(findShortest(starWarsData)).toStrictEqual('R2-D2');
+  test('It should correctly assess whether all the strings are happy', () => {
+    const words = ['things', 'apple (:)', ':)banana', 'missing that thing', 'cant:)aloupe'];
+
+    expect(allHappy(words)).toStrictEqual(false);
+    expect(allHappy(['apple (:)', ':)banana', 'cant:)aloupe'])).toStrictEqual(true);
+    expect(allHappy([])).toStrictEqual(true);
   });
 });
+
+xdescribe('Testing challenge 7', () => {
+  test('It should find all the strings that contain a given string', () => {
+    const words = ['things', 'apple (:)', ':)banana', 'missing that thing', 'cant:)aloupe'];
+
+    expect(findAnything(words, ':)')).toStrictEqual(findHappiness(words));
+    expect(findAnything(words, 'i')).toStrictEqual(['things', 'missing that thing']);
+  });
+});
+
+xdescribe('Testing challenge 8', () => {
+  test('It should determine whether all the strings contain a given string', () => {
+    const words = ['things', 'apple pie (:)', ':)banana pie', 'missing that thing', 'cant:)aloupe is tasty'];
+
+    expect(findEvery(words, 'a')).toStrictEqual(false);
+    expect(findEvery(words, '')).toStrictEqual(true);
+    expect(findEvery(words, 'i')).toStrictEqual(true);
+  });
+});
+
+xdescribe('Testing challenge 9', () => {
+  test('It should remove Brook from all courses', () => {
+    const roster = [
+      ['Michelle', 'Allie', 'Brook TESTING'],
+      ['Brook Riggio', 'hey look it\'s Brook', 'Jennifer'],
+      ['Nicholas', 'Sam', 'Scott', 'Vinicio']
+    ];
+
+    expect(unenrollBrook(roster)).toStrictEqual([
+      ['Michelle', 'Allie'],
+      ['Jennifer'],
+      ['Nicholas', 'Sam', 'Scott', 'Vinicio']
+    ]);
+    expect(unenrollBrook([['Brook', 'person'], [], ['person', 'person', 'Brook']])).toStrictEqual([['person'], [], ['person', 'person']]);
+    expect(unenrollBrook([])).toStrictEqual([]);
+  });
+});
+
+xdescribe('Testing challenge 10', () => {
+  test('It should sort events by the day on which they happen', () => {
+    const events = ['Dancing on Mondays and Tuesdays', 'Meet the inventors! Monday, August 7', 'in the club on a Tuesday', 'Thursday Night Code', 'Saturday Night Fever'];
+    const sortedEvents = sortByDay(events);
+    expect(sortedEvents[0]).toEqual(expect.arrayContaining(['Dancing on Mondays and Tuesdays', 'Meet the inventors! Monday, August 7']));
+    expect(sortedEvents[1]).toEqual(expect.arrayContaining(['Dancing on Mondays and Tuesdays', 'in the club on a Tuesday']));
+    expect(sortedEvents[2]).toStrictEqual([]);
+    expect(sortedEvents[3]).toStrictEqual(['Thursday Night Code']);
+    expect(sortedEvents[4]).toStrictEqual([]);
+    expect(sortedEvents[5]).toStrictEqual(['Saturday Night Fever']);
+    expect(sortedEvents[6]).toStrictEqual([]);
+
+    const events2 = ['Tuesday', 'Monday', 'Wednesday and Thursday', 'Tuesday 2', 'Thursday'];
+    const sortedEvents2 = sortByDay(events2);
+    expect(sortedEvents2[0]).toStrictEqual(['Monday']);
+    expect(sortedEvents2[1]).toEqual(expect.arrayContaining(['Tuesday', 'Tuesday 2']));
+    expect(sortedEvents2[2]).toStrictEqual(['Wednesday and Thursday']);
+    expect(sortedEvents2[3]).toEqual(expect.arrayContaining(['Wednesday and Thursday', 'Thursday']));
+    expect(sortedEvents2[4]).toStrictEqual([]);
+    expect(sortedEvents2[5]).toStrictEqual([]);
+    expect(sortedEvents2[6]).toStrictEqual([]);
+  });
+});
+
+xdescribe('Testing challenge 11', () => {
+  test('It should return the ith character of the ith string', () => {
+    const words = ['apple', 'banana', 'cantaloupe'];
+
+    expect(characterByIndex(words)).toStrictEqual(['a', 'a', 'n']);
+    expect(characterByIndex(['abc', 'def', 'ghi'])).toStrictEqual(['a', 'e', 'i']);
+    expect(characterByIndex(['wow', 'wow', 'wow'])).toStrictEqual(['w', 'o', 'w']);
+  });
+});
+
